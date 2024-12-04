@@ -25,4 +25,4 @@ for story in stories:
     story_name = story.a.text
     story_date = story.find('span', class_='short').text.replace('|', '')
     story_content = story.h5.text
-    print(f'{story_name}\n->{story_date}\n-->{story_content}\n')
+    print(f'-{story_name}\n->{story_date}\n{story_content}\n')
