@@ -32,7 +32,7 @@ for story in stories:
     stories_dates.append(story_date)
     stories_content.append(story_content)
     
-# Prepare email functionality
+# Email functionality
 
 email = 'alexcottam12@gmail.com'
 receiver_email = 'alexcottam12@gmail.com'
