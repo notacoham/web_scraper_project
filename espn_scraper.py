@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import smtplib
 
 # URL assignment
 url = 'https://www.ksl.com/sports/utah-hockey-club'
@@ -22,7 +23,7 @@ stories_names = []
 stories_dates = []
 stories_content = []
 
-# print all stories
+# loop over stories array
 for story in stories:
     story_name = story.a.text
     story_date = story.find('span', class_='short').text.replace('\n', '').replace('  ', '').replace('\xa0', '').replace('|', '')
@@ -31,4 +32,4 @@ for story in stories:
     stories_dates.append(story_date)
     stories_content.append(story_content)
     
-print(stories_content)
+# Prepare email functionality
