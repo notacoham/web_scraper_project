@@ -33,3 +33,21 @@ for story in stories:
     stories_content.append(story_content)
     
 # Prepare email functionality
+
+email = 'alexcottam12@gmail.com'
+receiver_email = 'alexcottam12@gmail.com'
+
+subject = f'UHC Top Stories for Today {top_story_header}'
+message = f'{top_story_header}\n{top_story_subheader}\n----------\n1. {stories_names[0]}\n2. {stories_names[1]}\n3. {stories_names[2]}\n4. {stories_names[3]}\n5. {stories_names[4]}\n'
+link = f'To read the full stories go to {url}'
+
+text = f'Subject: {subject}\n\n{message}\n\n{link}'
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+
+server.login(email, 'uprr kjsp rciw qafc')
+
+server.sendmail(email, receiver_email, text)
+
+print('Email has been sent to: ' + receiver_email)
